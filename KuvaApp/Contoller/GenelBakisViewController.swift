@@ -35,10 +35,10 @@ class GenelBakisViewController: UIViewController {
         }
         if(sgmntdControl.selectedSegmentIndex==1){
             //OzelliklerKismi
-            labelOne.text="Güç: 5"
-            labelTwo.text="Savunma: 5"
-            labelThree.text="Tecrube: 5"
-            labelFor.text="Yaşam Gücü: 100"
+            labelOne.text="Güç: 5              13 Gold : 6"
+            labelTwo.text="Savunma: 5          13 Gold : 6"
+            labelThree.text="Tecrube:          13 Gold : 6"
+            labelFor.text="Yaşam Gücü: 10      30 Gold : 125"
             labelFive.text=""
         }
         if(sgmntdControl.selectedSegmentIndex==2){

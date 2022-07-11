@@ -68,7 +68,6 @@
         <!--Savaş-->
         <scene sceneID="423-Rq-dLB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lBb-Xt-7Cr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="zBo-oJ-dLN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1z1-Ef-KWp">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -146,6 +145,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Savaş" image="pencil.slash" catalog="system" selectedImage="pencil.slash" id="v4j-ss-7h8"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBb-Xt-7Cr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="894" y="1095"/>
         </scene>
@@ -548,6 +548,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Kayit ol"/>
+                                <connections>
+                                    <segue destination="960-0f-3Hb" kind="presentation" modalPresentationStyle="fullScreen" id="L53-2J-X2D"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UDF-QH-gWG"/>
@@ -578,9 +581,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hM-rl-iB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="103"/>
+            <point key="canvasLocation" x="838" y="-326"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="L53-2J-X2D"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
