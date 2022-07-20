@@ -23,7 +23,7 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var labelProfilDetayli12: UILabel!
     @IBOutlet weak var labelProfilDetayli13: UILabel!
     @IBOutlet weak var labelProfilDetayli14: UILabel!
-    
+    let defaults = UserDefaults.standard
     
     public var userid:Int = 0;
     public var userName:String = "";
@@ -47,12 +47,24 @@ class ProfilViewController: UIViewController {
     public var userab_def:String = "";
     
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(false)
+        print(defaults.bool(forKey: "userDefauldIsLogin"))
+        if (defaults.bool(forKey: "userDefauldIsLogin")){
+            
+        }else{
+            self.performSegue(withIdentifier: "profilToLogin", sender: nil)
+        }
+       }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "http://yunusgunduz.site/public/api/1")
+        print("Debug: userDefauldID : \(self.defaults.string(forKey: "userDefauldID")!)")
+        print("Debug: userDefauldIsLogin : \(self.defaults.bool(forKey: "userDefauldIsLogin"))")
+        
+            var userDefID = defaults.object(forKey: "userDefauldID")
+        let url = URL(string: "http://yunusgunduz.site/public/api/\(userDefID!)")
         let session  = URLSession.shared
         let task = session.dataTask(with: url!) { data, response, error in
             if error != nil {
@@ -78,6 +90,12 @@ class ProfilViewController: UIViewController {
                             }
                             if (jsonResponse!["race"]  as? String == "m"){
                                 userRace = "Mage"
+                            }
+                            if (jsonResponse!["race"]  as? String == "0"){
+                                userRace = "ZeroMan"
+                            }
+                            if (jsonResponse!["race"]  as? String == "1"){
+                                userRace = "Elf"
                             }
                             userlevel = jsonResponse!["level"]  as? String ?? "None"
                             userBattleValue = jsonResponse!["battle_value"]  as? String ?? "None"
@@ -120,7 +138,16 @@ class ProfilViewController: UIViewController {
         
         
     }
-    
+    @IBAction func btnExit(_ sender: UIButton) {
+        
+        self.defaults.set(false, forKey: "userDefauldIsLogin")
+        print(defaults.bool(forKey: "userDefauldIsLogin"))
+        self.performSegue(withIdentifier: "profilToLogin", sender: nil)
+    }
+   
+   
+       
+   
 
     /*
     // MARK: - Navigation

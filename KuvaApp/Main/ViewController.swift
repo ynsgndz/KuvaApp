@@ -11,17 +11,27 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    var username:String = "";
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+       
+       
     }
 
-    @IBAction func btnGrsYap(_ sender: Any) {
-        if  username == "ynsgndz"{
-            performSegue(withIdentifier: "loginToMain", sender: nil)
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(false)
+        print(defaults.bool(forKey: "userDefauldIsLogin"))
+        print("Debug: username : \(self.defaults.string(forKey: "username")!)")
+        if (defaults.bool(forKey: "userDefauldIsLogin")){
+            self.performSegue(withIdentifier: "loginToMain", sender: nil)
+            usernameTextField.text = self.defaults.string(forKey: "username")
+        }else{
+            usernameTextField.text = self.defaults.string(forKey: "username")
         }
+       }
+    
+    @IBAction func btnGrsYap(_ sender: Any) {
+      
         tryJsonCekme()
       //  bilgiCekme()
     }
@@ -38,16 +48,28 @@ class ViewController: UIViewController {
                     do {
                         let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
                         as? [Dictionary<String, Any>]
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { [self] in
                            
                            // print(jsonResponse!)
                             
                             for i in jsonResponse!{
                                 
-                                if  i["username"]! as! String == "ynsgndz"{
+                             
                                     print(i["username"]!)
-                                   
-                                }
+                                    if ((i["username"]! as! String) == self.usernameTextField.text) {
+                                        self.defaults.set(true, forKey: "userDefauldIsLogin")
+                                        self.defaults.set("\(i["id"]!)", forKey: "userDefauldID")
+                                        self.defaults.set("\(i["username"]!)", forKey: "username")
+                                        self.performSegue(withIdentifier: "loginToMain", sender: nil)
+                                       
+                                        print("Debug: userDefauldID : \(self.defaults.string(forKey: "userDefauldID")!)")
+                                        print("Debug: userDefauldIsLogin : \(self.defaults.bool(forKey: "userDefauldIsLogin"))")
+                                    }
+                                    
+                                 
+                                    
+                                 
+                                
                             }
                             
                            
@@ -66,39 +88,7 @@ class ViewController: UIViewController {
         }.resume()
     }
     
-    
-    func bilgiCekme(){
-        let username = usernameTextField.text!
-        let url = URL(string: "http://yunusgunduz.site/public/api/\(username)")
-        let session  = URLSession.shared
-        let task = session.dataTask(with: url!) { data, response, error in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-            }else{
-                if data != nil {
-                    do {
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-                        as? Dictionary<String, Any>
-                        DispatchQueue.main.async {
-                           
-                            print(jsonResponse ?? "error var")
-                            
-                         
-                            
-                                self.username = jsonResponse!["username"] as! String
-                          
-                                
-                        }
-                    }catch{
-                        print(error)
-                    }
-                }
-            }
-            
-        }.resume()
-      
-    }
-        
+  
         
     }
     

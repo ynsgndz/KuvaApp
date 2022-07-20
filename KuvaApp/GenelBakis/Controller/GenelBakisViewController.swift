@@ -10,7 +10,7 @@ import UIKit
 class GenelBakisViewController: UIViewController {
 
     @IBOutlet weak var sgmntdControl: UISegmentedControl!
-    
+    let defaults = UserDefaults.standard
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
     @IBOutlet weak var labelThree: UILabel!
@@ -40,14 +40,24 @@ class GenelBakisViewController: UIViewController {
     
 
  
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(false)
+        print(defaults.bool(forKey: "userDefauldIsLogin"))
+        if (defaults.bool(forKey: "userDefauldIsLogin")){
+            
+        }else{
+            self.performSegue(withIdentifier: "genelToLogin", sender: nil)
+        }
+       }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        print("Debug: userDefauldID : \(self.defaults.string(forKey: "userDefauldID")!)")
+        print("Debug: userDefauldIsLogin : \(self.defaults.bool(forKey: "userDefauldIsLogin"))")
         
-        
-        let url = URL(string: "http://yunusgunduz.site/public/api/1")
+            var userDefID = defaults.object(forKey: "userDefauldID")
+        let url = URL(string: "http://yunusgunduz.site/public/api/\(userDefID!)")
         let session  = URLSession.shared
         let task = session.dataTask(with: url!) { data, response, error in
             if error != nil {
@@ -73,6 +83,12 @@ class GenelBakisViewController: UIViewController {
                             }
                             if (jsonResponse!["race"]  as? String == "m"){
                                 userRace = "Mage"
+                            }
+                            if (jsonResponse!["race"]  as? String == "0"){
+                                userRace = "ZeroMan"
+                            }
+                            if (jsonResponse!["race"]  as? String == "1"){
+                                userRace = "Elf"
                             }
                             userlevel = jsonResponse!["level"]  as? String ?? "None"
                             userBattleValue = jsonResponse!["battle_value"]  as? String ?? "None"

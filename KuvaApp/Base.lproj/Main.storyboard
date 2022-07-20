@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KuvaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginPage" id="BYZ-38-t0r" customClass="ViewController" customModule="KuvaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
         <!--Savaş-->
         <scene sceneID="423-Rq-dLB">
             <objects>
-                <viewController id="zBo-oJ-dLN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="savasPage" id="zBo-oJ-dLN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1z1-Ef-KWp">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,7 +282,7 @@
         <!--Profil-->
         <scene sceneID="N2L-b3-QxE">
             <objects>
-                <viewController id="LnY-1q-kCI" customClass="ProfilViewController" customModule="KuvaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profilPage" id="LnY-1q-kCI" customClass="ProfilViewController" customModule="KuvaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fay-tU-Tg9">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,13 +291,7 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="KuVa : Profil" id="iQj-DK-YbG">
-                                        <barButtonItem key="rightBarButtonItem" title="Çıkış yap" id="CEh-7s-MVs">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="WvA-By-m8m"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="KuVa : Profil" id="iQj-DK-YbG"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVu-45-0dz">
@@ -398,6 +392,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3K-3f-hCW">
+                                <rect key="frame" x="234" y="111" width="140" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cikis yap"/>
+                                <connections>
+                                    <action selector="btnExit:" destination="LnY-1q-kCI" eventType="touchUpInside" id="gmL-Ex-xaW"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="profilToLogin" modalPresentationStyle="fullScreen" id="kCf-NL-APv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ywE-ih-Z4q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -429,7 +433,7 @@
         <!--Genel Bakış-->
         <scene sceneID="mpR-do-bmz">
             <objects>
-                <viewController id="Zrb-UE-wrF" customClass="GenelBakisViewController" customModule="KuvaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="genelPage" id="Zrb-UE-wrF" customClass="GenelBakisViewController" customModule="KuvaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o6q-nY-wpV">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -500,6 +504,7 @@
                         <outlet property="labelThree" destination="AfD-Lt-kPu" id="NAW-t0-bwW"/>
                         <outlet property="labelTwo" destination="J3L-J7-Kxx" id="CNc-jV-PpR"/>
                         <outlet property="sgmntdControl" destination="1CS-p1-8W0" id="yNg-U1-RSV"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="genelToLogin" modalPresentationStyle="fullScreen" id="pba-P9-pAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEF-SG-sLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -509,7 +514,7 @@
         <!--View Controller-->
         <scene sceneID="HXD-ey-h1h">
             <objects>
-                <viewController id="95m-nO-BoG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="kayitPage" id="95m-nO-BoG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d5u-xI-4fM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,7 +574,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="als-UQ-UeA">
             <objects>
-                <tabBarController id="960-0f-3Hb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="navigationPage" id="960-0f-3Hb" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="EKw-97-bgw"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WD9-Jp-pTt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -590,6 +595,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fhQ-Ba-hh3"/>
+        <segue reference="pba-P9-pAz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="eye" catalog="system" width="128" height="81"/>
