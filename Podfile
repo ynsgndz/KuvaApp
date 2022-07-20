@@ -5,6 +5,7 @@ target 'KuvaApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'IQKeyboardManagerSwift'
+  
   # Pods for KuvaApp
 
 end

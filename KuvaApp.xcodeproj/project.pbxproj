@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011309BE2887DB2500A13309 /* UyeCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011309BD2887DB2500A13309 /* UyeCevap.swift */; };
+		011309C02887DB4A00A13309 /* Uyeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011309BF2887DB4A00A13309 /* Uyeler.swift */; };
+		011309C32887F0DF00A13309 /* userBilgileri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011309C22887F0DF00A13309 /* userBilgileri.swift */; };
 		01315FDE287B333A00BF5D65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01315FDD287B333A00BF5D65 /* AppDelegate.swift */; };
 		01315FE0287B333A00BF5D65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01315FDF287B333A00BF5D65 /* SceneDelegate.swift */; };
 		01315FE2287B333A00BF5D65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01315FE1287B333A00BF5D65 /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011309BD2887DB2500A13309 /* UyeCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UyeCevap.swift; sourceTree = "<group>"; };
+		011309BF2887DB4A00A13309 /* Uyeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uyeler.swift; sourceTree = "<group>"; };
+		011309C22887F0DF00A13309 /* userBilgileri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userBilgileri.swift; sourceTree = "<group>"; };
 		01315FDA287B333A00BF5D65 /* KuvaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuvaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01315FDD287B333A00BF5D65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01315FDF287B333A00BF5D65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011309B42887CAF700A13309 /* GenelBakis */ = {
+			isa = PBXGroup;
+			children = (
+				011309BA2887DAD500A13309 /* Modal */,
+				011309B72887CB2700A13309 /* Controller */,
+				011309B62887CB1900A13309 /* View */,
+			);
+			path = GenelBakis;
+			sourceTree = "<group>";
+		};
+		011309B62887CB1900A13309 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		011309B72887CB2700A13309 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01A7CDDA287B691900C944A1 /* GenelBakisViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		011309B82887CB4600A13309 /* ProfilView */ = {
+			isa = PBXGroup;
+			children = (
+				011309B92887CB4E00A13309 /* Controller */,
+			);
+			path = ProfilView;
+			sourceTree = "<group>";
+		};
+		011309B92887CB4E00A13309 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01A7CDDC287B722B00C944A1 /* ProfilViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		011309BA2887DAD500A13309 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				011309BD2887DB2500A13309 /* UyeCevap.swift */,
+				011309BF2887DB4A00A13309 /* Uyeler.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		011309C12887ED3300A13309 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				01315FE1287B333A00BF5D65 /* ViewController.swift */,
+				01315FDD287B333A00BF5D65 /* AppDelegate.swift */,
+				01315FE8287B333D00BF5D65 /* LaunchScreen.storyboard */,
+				01315FDF287B333A00BF5D65 /* SceneDelegate.swift */,
+				01315FE6287B333D00BF5D65 /* Assets.xcassets */,
+				011309C22887F0DF00A13309 /* userBilgileri.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		01315FD1287B333A00BF5D65 = {
 			isa = PBXGroup;
 			children = (
@@ -67,25 +136,13 @@
 		01315FDC287B333A00BF5D65 /* KuvaApp */ = {
 			isa = PBXGroup;
 			children = (
-				01A7CDD9287B68DF00C944A1 /* Contoller */,
-				01315FDD287B333A00BF5D65 /* AppDelegate.swift */,
-				01315FDF287B333A00BF5D65 /* SceneDelegate.swift */,
+				011309C12887ED3300A13309 /* Main */,
+				011309B82887CB4600A13309 /* ProfilView */,
+				011309B42887CAF700A13309 /* GenelBakis */,
 				01315FE3287B333A00BF5D65 /* Main.storyboard */,
-				01315FE6287B333D00BF5D65 /* Assets.xcassets */,
-				01315FE8287B333D00BF5D65 /* LaunchScreen.storyboard */,
 				01315FEB287B333D00BF5D65 /* Info.plist */,
 			);
 			path = KuvaApp;
-			sourceTree = "<group>";
-		};
-		01A7CDD9287B68DF00C944A1 /* Contoller */ = {
-			isa = PBXGroup;
-			children = (
-				01315FE1287B333A00BF5D65 /* ViewController.swift */,
-				01A7CDDA287B691900C944A1 /* GenelBakisViewController.swift */,
-				01A7CDDC287B722B00C944A1 /* ProfilViewController.swift */,
-			);
-			path = Contoller;
 			sourceTree = "<group>";
 		};
 		16D2C17E6C22F8B7546487D1 /* Frameworks */ = {
@@ -220,9 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011309C32887F0DF00A13309 /* userBilgileri.swift in Sources */,
 				01315FE2287B333A00BF5D65 /* ViewController.swift in Sources */,
+				011309C02887DB4A00A13309 /* Uyeler.swift in Sources */,
 				01A7CDDD287B722B00C944A1 /* ProfilViewController.swift in Sources */,
 				01A7CDDB287B691900C944A1 /* GenelBakisViewController.swift in Sources */,
+				011309BE2887DB2500A13309 /* UyeCevap.swift in Sources */,
 				01315FDE287B333A00BF5D65 /* AppDelegate.swift in Sources */,
 				01315FE0287B333A00BF5D65 /* SceneDelegate.swift in Sources */,
 			);
