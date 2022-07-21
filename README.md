@@ -1,4 +1,4 @@
 # KuvaApp
 
-  pod 'IQKeyboardManagerSwift'
+  pod 'IQKeyboardManagerSwift' <br>
   pod 'Alamofire'
